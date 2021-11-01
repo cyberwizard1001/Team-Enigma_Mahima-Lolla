@@ -29,7 +29,7 @@ class _DriverWhileDrivingState extends State<DriverWhileDriving> {
         .then((Position position) {
       setState(() {
         _locationString =
-            position.latitude.toString() + position.longitude.toString();
+            position.latitude.toString() + "\n" + position.longitude.toString();
       });
       db.updateItem(location: position);
     }).catchError((e) {
@@ -99,7 +99,7 @@ class _DriverWhileDrivingState extends State<DriverWhileDriving> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(
-                      top: 10, right: _locationString.length.toInt() * 14.5),
+                      top: 10, right: _locationString.length.toInt() * 5),
                   child: Container(
                       child: Text(
                     _locationString,
